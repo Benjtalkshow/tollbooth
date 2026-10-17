@@ -23,7 +23,7 @@ Built with [Arc Studio](https://studio.arc.io) for the Arc Microgrants "Built wi
 - Arc Studio project: https://studio.arc.io/app/87436b9d-4210-4afb-91ca-fe206a6008b2
 - This repo: https://github.com/Benjtalkshow/tollbooth
 - SDK repo and npm packages: https://github.com/Benjtalkshow/tollbooth-sdk · `tollbooth-sdk` · `@tollbooth-sdk/mcp`
-- Live app: pending
+- Live app: pending (Studio preview at the project URL above)
 - Arc Testnet contract (v2): https://explorer.testnet.arc.io/address/0x92e2758e11883865db2cebbfe16abf1cd5231c0d
 - Arc mainnet contract: https://explorer.arc.io/address/0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532 (deploy tx https://explorer.arc.io/tx/0x2fb7b921a8a4ee3870deb5be92c2ebb405f81b8ba91b49f1702defbee55b233e)
 
@@ -35,6 +35,17 @@ Built with [Arc Studio](https://studio.arc.io) for the Arc Microgrants "Built wi
 | approve + release milestone 0 | Agent A | https://explorer.testnet.arc.io/tx/0x933ed2d6c1b3147f7411fdd18b05a5d94adc1d8e073630dec16fe3de0659d741 |
 | dispute milestone 1 | Agent A | https://explorer.testnet.arc.io/tx/0xb5fa2ef4496d13f4304579976c93d81ca98d4bc43933fe3d02555602dfe5dbad |
 | resolve milestone 1, 50/50 split | Agent C (resolver) | https://explorer.testnet.arc.io/tx/0x7d001a6f52e79c8f377bde82e84e83f3c84ea20015ab402d2fa5a4e387e3fa62 |
+
+## Mainnet proof (three Claude agents, escrow #1 on Arc mainnet)
+
+Contract `0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532`. Real USDC, every action chosen by a Claude agent.
+
+| Step | Agent | Tx |
+|---|---|---|
+| hire + fund 0.20 USDC, 2 milestones | A (procurement) | https://explorer.arc.io/tx/0x22754233785db322d65c1b67c2c66f2991b37ce19856823c72880db2af8e5ab3 |
+| approve + release milestone 0 after hash check | A | https://explorer.arc.io/tx/0x0a954ded491ce440ecf246c20e4790807ff4801a05b86df60094c69c9e849ba3 |
+| dispute milestone 1 (one of three bullets translated) | A | https://explorer.arc.io/tx/0x69ff56f8be97eb24e0391e93aeb5b095279180c4a4c7655e9b267581b4a7cfe2 |
+| resolve: one third to worker, two thirds back to client | C (judge) | https://explorer.arc.io/tx/0x36f4406737d54b0feeb8866102c644ed175d5897e86d0926882711b26d7562a7 |
 
 ## Testnet proof (three Claude agents, escrow #2 on v2)
 
