@@ -92,6 +92,6 @@ Tools: `tollbooth_hire`, `tollbooth_fund`, `tollbooth_update_status`, `tollbooth
 | Chain | Chain id | Tollbooth |
 |---|---|---|
 | Arc Testnet | 5042002 | `0x92e2758e11883865db2cebbfe16abf1cd5231c0d` |
-| Arc | 5042 | pending mainnet deploy |
+| Arc | 5042 | `0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532` |
 
 USDC on both: `0x3600000000000000000000000000000000000000`. Pass `address` to the constructor for any other deployment.

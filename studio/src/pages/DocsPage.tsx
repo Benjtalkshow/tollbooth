@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { CopyButton } from '@/components/ui/CopyButton'
 import { cx } from '@/lib/utils'
 import { getTollboothAddress, getExplorerBase, TOLLBOOTH_ABI } from '@/config'
-import { arcTestnet } from 'viem/chains'
+import { arc, arcTestnet } from 'viem/chains'
 
 function LifecycleDiagram() {
   type Tone = 'neutral' | 'accent' | 'warn' | 'violet'
@@ -466,7 +466,7 @@ export function DocsPage() {
             </div>
             {[
               { label: 'Arc Testnet', addr: contractAddr, deployed: !!contractAddr },
-              { label: 'Arc Mainnet', addr: '',           deployed: false },
+              { label: 'Arc Mainnet', addr: getTollboothAddress(arc.id), deployed: true },
             ].map(({ label, addr, deployed }) => (
               <div key={label} className="flex gap-4 items-center px-4 py-3 border-b border-borderSubtle last:border-0 text-sm">
                 <span className="w-28 shrink-0 text-fg">{label}</span>
@@ -497,7 +497,7 @@ export function DocsPage() {
 
           {/* USDC */}
           <Card>
-            <h3 className="text-sm font-semibold text-fg mb-3">USDC (Arc Testnet)</h3>
+            <h3 className="text-sm font-semibold text-fg mb-3">USDC (Arc Testnet and Arc Mainnet)</h3>
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs text-muted tabular">0x3600000000000000000000000000000000000000</span>
               <CopyButton text="0x3600000000000000000000000000000000000000" size={12} />

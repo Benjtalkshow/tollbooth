@@ -4,8 +4,7 @@ import type { Address, Chain } from 'viem'
 /** Deployed Tollbooth contract addresses by chain id. */
 export const TOLLBOOTH_ADDRESSES: Record<number, Address | undefined> = {
   [arcTestnet.id]: '0x92e2758e11883865db2cebbfe16abf1cd5231c0d',
-  // Arc mainnet address is filled in after the mainnet deploy.
-  [arc.id]: undefined,
+  [arc.id]: '0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532',
 }
 
 export const SUPPORTED_CHAINS: Record<number, Chain> = {

@@ -39,7 +39,7 @@ export const TOLLBOOTH_ABI = tollboothArtifact.abi
  */
 export const TOLLBOOTH_ADDRESSES: Record<number, `0x${string}`> = {
   [arcTestnet.id]: '0x92e2758e11883865db2cebbfe16abf1cd5231c0d', // v2
-  [arc.id]: '' as `0x${string}`, // not yet deployed — fill in after mainnet deploy
+  [arc.id]: '0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532',
 }
 
 /** Supported Tollbooth chain IDs (Arc Testnet and Arc mainnet). */
