@@ -1,0 +1,20 @@
+{
+  "name": "tollbooth-agents-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo": "tsx demo.ts",
+    "keygen": "tsx keygen.ts",
+    "demo:llm": "tsx llm-agents.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "tollbooth-sdk": "file:../../packages/sdk",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

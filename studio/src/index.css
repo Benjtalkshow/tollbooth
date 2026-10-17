@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS tokens ── */
+:root {
+  --bg:            #0B1120;
+  --surface:       #111827;
+  --surface-2:     #1E293B;
+  --border:        #334155;
+  --border-subtle: #1F2937;
+  --fg:            #F8FAFC;
+  --muted:         #94A3B8;
+  --accent:        #22C55E;
+  --accent-hover:  #16A34A;
+  --info:          #38BDF8;
+  --warning:       #F59E0B;
+  --danger:        #EF4444;
+  --radius-card:   12px;
+}
+
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 16px; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography helpers ── */
+.font-display { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
+.font-mono    { font-family: 'JetBrains Mono', Menlo, monospace; }
+.tabular      { font-variant-numeric: tabular-nums; }
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── Skeleton shimmer ── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    #273348 50%,
+    var(--surface-2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+  border-radius: 6px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Sonner toast overrides ── */
+[data-sonner-toaster] {
+  --toast-bg:      var(--surface-2);
+  --toast-border:  var(--border);
+  --toast-text:    var(--fg);
+}
+
+/* ── ConnectKit overrides ── */
+.ck-button { min-height: 44px !important; }
+
+/* Keep the Studio watermark clear of the mobile bottom nav */
+@media (max-width: 1023px) {
+  .studio-watermark { bottom: 76px !important; }
+}
+
+/* Dense data tables */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th { text-align: left; font-weight: 500; color: var(--muted); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--surface); white-space: nowrap; }
+.tbl td { padding: 10px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: middle; white-space: nowrap; }
+.tbl tr:last-child td { border-bottom: 0; }
+.tbl tbody tr:hover td { background: rgba(30, 41, 59, 0.5); }
+.tbl .num { text-align: right; font-family: 'JetBrains Mono', Menlo, monospace; font-variant-numeric: tabular-nums; }
+.kpi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: 8px; background: var(--surface); overflow: hidden; }
+@media (min-width: 768px) { .kpi { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.kpi > div { padding: 14px 16px; border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.kpi > div:nth-child(2n) { border-right: 0; }
+@media (min-width: 768px) { .kpi > div { border-bottom: 0; } .kpi > div:nth-child(2n) { border-right: 1px solid var(--border-subtle); } .kpi > div:last-child { border-right: 0; } }
+.kpi .label { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+.kpi .value { font-size: 20px; font-weight: 600; margin-top: 4px; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.kpi .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }

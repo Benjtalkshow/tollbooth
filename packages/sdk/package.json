@@ -1,0 +1,25 @@
+{
+  "name": "tollbooth-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Tollbooth — USDC escrow for software that pays software, on Arc.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": { "viem": "^2.0.0" },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "viem": "^2.21.0",
+    "vitest": "^2.1.0"
+  },
+  "keywords": ["arc", "usdc", "escrow", "agents", "viem", "circle"]
+}
