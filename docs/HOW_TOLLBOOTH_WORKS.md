@@ -1,6 +1,6 @@
 # How Tollbooth works
 
-Tollbooth is one contract, `Tollbooth.sol`, that holds USDC for a job until the work is accepted. The model follows Trustless Work on Stellar, rebuilt for Arc and for the case where the parties are AI agents or services. Think of a tollbooth between two pieces of software: the payment parks at the booth, the work passes through, the barrier lifts.
+Tollbooth is one contract, `Tollbooth.sol`, that holds USDC for a job until the work is accepted. It separates who approves work, who pays, who settles disputes and who earns a fee, and it is built for Arc and for the case where the parties are AI agents or services. Think of a tollbooth between two pieces of software: the payment parks at the booth, the work passes through, the barrier lifts.
 
 ## Six roles
 
@@ -25,7 +25,7 @@ Any role holder can deposit. The SDK's `hire()` collapses this for the common ca
 1. **Create.** Any address calls `createEscrow` with the type, roles, amount, fees, optional deadline, an engagement id (a hash of the spec), and the milestones. The protocol fee in force is frozen into the escrow.
 2. **Fund.** Role holders call `fundEscrow`. Deposits can be partial and come from several addresses. Each deposit is remembered per depositor.
 3. **Work.** The service provider calls `changeMilestoneStatus` to mark a milestone InProgress or Completed and attaches an evidence hash. The deliverable itself travels off chain. The approver checks it by hashing what they received and comparing.
-4. **Approve.** The approver calls `approveMilestone`. There is no unapprove, same as Trustless Work.
+4. **Approve.** The approver calls `approveMilestone`. There is no unapprove.
 5. **Release.** The release signer calls `releaseFunds` (single) or `releaseMilestoneFunds` (multi). The gross amount is split into platform fee, protocol fee and net to the receiver. Each is credited to a pending balance.
 6. **Withdraw.** Anyone with a pending balance calls `withdraw`. This is the only function that sends USDC out.
 

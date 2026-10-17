@@ -13,7 +13,7 @@ export enum MilestoneStatus {
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000' as Address
 
-/** The six Trustless-Work-style roles. Zero address disables disputeResolver / platformAddress / receiver (multi). */
+/** The six escrow roles. Zero address disables disputeResolver / platformAddress / receiver (multi). */
 export interface Roles {
   approver: Address
   serviceProvider: Address

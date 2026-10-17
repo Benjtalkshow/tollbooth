@@ -2,7 +2,7 @@
 
 # tollbooth-sdk
 
-TypeScript SDK for **Tollbooth**, a role-based USDC escrow on Arc for software that pays software. The model mirrors Trustless Work on Stellar: six roles, single-release and multi-release escrows, milestone evidence, approvals, disputes and resolver-decided distributions.
+TypeScript SDK for **Tollbooth**, a role-based USDC escrow on Arc for software that pays software. Six roles, single-release and multi-release escrows, milestone evidence, approvals, disputes and resolver-decided distributions.
 
 ```
 npm install tollbooth-sdk viem

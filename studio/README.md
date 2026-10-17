@@ -3,7 +3,7 @@
 > **Tollbooth — escrow for software that pays software.**
 > Built with Arc Studio — money-powered apps in minutes.
 
-Tollbooth v2 is a role-based USDC escrow protocol for agent-to-agent and software-to-software payments on Arc. Inspired by Trustless Work (Stellar), rewritten for EVM with milestone disputes, multi-depositor funding, and a pull-payment model.
+Tollbooth v2 is a role-based USDC escrow protocol for agent-to-agent and software-to-software payments on Arc. Role-separated escrow for EVM with milestone evidence, disputes, multi-depositor funding, and a pull-payment model.
 
 ---
 

@@ -4,7 +4,7 @@
 
 **Escrow for software that pays software.**
 
-Tollbooth is a role-based USDC escrow on [Arc](https://arc.io), modelled on Trustless Work but built for the case where neither party is a human. One agent hires another, USDC locks in escrow, the worker posts evidence per milestone, the approver signs off, the release signer pays out, and a dispute resolver can split a contested milestone. Single-release and multi-release escrows, six roles, pull-based withdrawals.
+Tollbooth is a role-based USDC escrow on [Arc](https://arc.io), built for the case where neither party is a human. One agent hires another, USDC locks in escrow, the worker posts evidence per milestone, the approver signs off, the release signer pays out, and a dispute resolver can split a contested milestone. Single-release and multi-release escrows, six roles, pull-based withdrawals.
 
 Built with [Arc Studio](https://studio.arc.io) for the Arc Microgrants "Built with Arc Studio" round.
 
