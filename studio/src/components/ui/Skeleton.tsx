@@ -1,10 +1,5 @@
 import { cx } from '@/lib/utils'
 
-interface SkeletonProps {
-  className?: string
-  lines?: number
-}
-
 export function Skeleton({ className }: { className?: string }) {
   return <div className={cx('skeleton', className)} />
 }

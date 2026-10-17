@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useAccount } from 'wagmi'
 import {
-  ArrowLeft, ExternalLink, Copy, Check, ChevronDown, ChevronUp,
-  Clock, Shield, User, DollarSign, AlertTriangle, CheckCircle2,
+  ArrowLeft, ExternalLink, ChevronDown, ChevronUp,
+  AlertTriangle, CheckCircle2,
   XCircle,
 } from 'lucide-react'
 import { toast } from 'sonner'

@@ -6,10 +6,10 @@ import { Plus, Trash2, ChevronRight, ChevronLeft, Check, AlertCircle } from 'luc
 import { toast } from 'sonner'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { useUsdcApprove, useTollboothWrite, useUsdcAllowance, useUsdcBalance } from '@/hooks/useTollbooth'
-import { hashContent, hashEngagementId, parseUsdcInput, fmtUsdc, splitFees, cx } from '@/lib/utils'
+import { useTollboothWrite, useUsdcBalance } from '@/hooks/useTollbooth'
+import { hashEngagementId, parseUsdcInput, fmtUsdc, splitFees, cx } from '@/lib/utils'
 import { EscrowType } from '@/lib/types'
-import { getTollboothAddress, isTollboothDeployed } from '@/config'
+import { isTollboothDeployed } from '@/config'
 
 // ── Step indicator ────────────────────────────────────────────────────────────
 function StepBar({ step }: { step: number }) {
@@ -107,19 +107,14 @@ export function CreatePage() {
   const { address: wallet, chainId, isConnected } = useAccount()
   const navigate = useNavigate()
   const deployed = isTollboothDeployed(chainId)
-  const tollboothAddr = getTollboothAddress(chainId)
 
   const [step, setStep] = useState(0)
   const [form, setForm] = useState<FormState>(() => defaultForm(wallet ?? ''))
-  const [submitStep, setSubmitStep] = useState<'idle' | 'creating' | 'approving' | 'funding' | 'done'>('idle')
-
-  const { approve: approveUsdc, isPending: isApproving } = useUsdcApprove()
-  const { allowance, refetch: refetchAllow } = useUsdcAllowance(tollboothAddr)
   const { balance: usdcBal } = useUsdcBalance()
 
   const { execute: createEscrow, status: createStatus } = useTollboothWrite('createEscrow', {
     successMsg: 'Escrow created.',
-    onSuccess: (hash) => { void navigate('/escrows') },
+    onSuccess: (_hash) => { void navigate('/escrows') },
   })
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
@@ -181,7 +176,6 @@ export function CreatePage() {
   }
 
   function handleSubmit() {
-    setSubmitStep('creating')
     void createEscrow(buildArgs())
   }
 

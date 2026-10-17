@@ -1,5 +1,4 @@
-import { keccak256, toHex, encodeAbiParameters, parseAbiParameters } from 'viem'
-import { formatAmount, type Amount } from '@/onchain-money'
+import { keccak256, toHex } from 'viem'
 
 /** Shorten an address for display: 0x1234...5678 */
 export function shortAddr(addr: string): string {

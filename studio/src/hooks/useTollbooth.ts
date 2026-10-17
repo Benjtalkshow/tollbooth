@@ -6,11 +6,10 @@ import { useAccount, useReadContract, useWriteContract, useWaitForTransactionRec
 import { useQueryClient } from '@tanstack/react-query'
 import { erc20Abi } from 'viem'
 import { arcTestnet } from 'viem/chains'
-import { useQuery } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getTollboothAddress, TOLLBOOTH_ABI, isTollboothDeployed, getExplorerBase } from '@/config'
 import { getUsdc } from '@/onchain-facts'
-import type { Escrow, Milestone, Roles, Distribution } from '@/lib/types'
+import type { Escrow, Milestone, Roles } from '@/lib/types'
 import { parseContractError } from '@/lib/errors'
 
 // ────────────────────────────────────────────────────────────────
