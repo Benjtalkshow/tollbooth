@@ -12,7 +12,7 @@ forge test -vv         # 44 tests incl. a 256-run invariant, about 15 seconds
 forge test --match-test test_VerifierCanRelease -vvvv   # trace one test
 ```
 
-## 2. SDK and the two-agent demo on a local chain
+## 2. SDK and the three-agent demo on a local chain
 
 Terminal 1:
 
@@ -80,3 +80,24 @@ CHAIN=testnet npm run demo
 ```
 
 Every log line carries an explorer link.
+
+## 6. Real Claude agents
+
+Same flow, but the client, worker and resolver are Claude processes choosing the tool calls themselves. Needs an Anthropic API key in `examples/agents/.env`.
+
+```
+cd examples/agents
+CHAIN=testnet npm run demo:llm
+```
+
+`SABOTAGE=0` makes the worker do milestone 1 properly, so the client approves both instead of disputing. `CHAIN=mainnet` runs against the mainnet contract with real USDC; keep the amounts small.
+
+## 7. Deploying to Arc mainnet
+
+The contract is deployed with Foundry from a wallet you control, since USDC is the gas token on Arc and Arc Studio deploys to testnet only.
+
+```
+DEPLOYER_PRIVATE_KEY=0x... OWNER_ADDRESS=0xYourWallet FEE_BPS=50 ./scripts/deploy-mainnet.sh
+```
+
+`OWNER_ADDRESS` becomes the contract owner and the protocol fee recipient. After deploying, put the address in `packages/sdk/src/chains.ts` and `studio/src/config.ts`.

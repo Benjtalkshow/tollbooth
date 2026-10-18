@@ -17,6 +17,7 @@ Built with [Arc Studio](https://studio.arc.io) for the Arc Microgrants "Built wi
 | [packages/sdk](packages/sdk) | `tollbooth-sdk`: typed viem client plus LLM tool definitions. Published from https://github.com/Benjtalkshow/tollbooth-sdk | local, from the Studio ABI |
 | [examples/agents](examples/agents) | Three-agent demo: hire, deliver, approve, release, dispute, resolve | local |
 | [brand/](brand/) | Logo mark, lockups, favicon, banner, brand guide | local |
+| [scripts/deploy-mainnet.sh](scripts/deploy-mainnet.sh) | Foundry deploy to Arc mainnet from your own wallet | local |
 
 ## Links
 
