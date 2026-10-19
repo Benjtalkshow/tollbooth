@@ -16,3 +16,4 @@ studio/cache/
 studio/broadcast/
 studio/contracts/out/*
 !studio/contracts/out/Tollbooth.sol/
+brand/clips/
