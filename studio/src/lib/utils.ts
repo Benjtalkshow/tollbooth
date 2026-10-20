@@ -13,14 +13,15 @@ export function fmtUsdc(raw: bigint): string {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    maximumFractionDigits: 6, // fees and small payouts are sub-cent; never round them to $0.00
   }).format(dollars)
 }
 
 /** Format a bigint USDC amount as a plain number string: "1234.56" */
 export function fmtUsdcPlain(raw: bigint): string {
   const dollars = Number(raw) / 1_000_000
-  return dollars.toFixed(2)
+  const six = dollars.toFixed(6)
+  return six.replace(/(\.\d{2}\d*?)0+$/, '$1')
 }
 
 /** Parse a human USDC string "12.50" -> bigint 12_500_000n */
