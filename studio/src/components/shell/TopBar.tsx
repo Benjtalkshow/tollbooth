@@ -76,8 +76,8 @@ function WithdrawChip() {
       aria-label={`Withdraw ${fmtUsdc(pending)} pending`}
     >
       <ArrowDownToLine size={13} strokeWidth={2} />
+      <span className="hidden sm:inline">Withdraw</span>
       <span className="font-mono tabular">{fmtUsdc(pending)}</span>
-      <span className="hidden sm:inline">available</span>
     </button>
   )
 }
