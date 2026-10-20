@@ -414,7 +414,7 @@ export function EscrowDetailPage() {
 
   if (isLoading) {
     return (
-      <div className="max-w-3xl space-y-4">
+      <div className="max-w-6xl space-y-4">
         <Skeleton className="h-8 w-48" />
         <Skeleton className="h-32 rounded-card" />
         <Skeleton className="h-48 rounded-card" />
@@ -460,7 +460,7 @@ export function EscrowDetailPage() {
   }
 
   return (
-    <div className="max-w-3xl space-y-6">
+    <div className="max-w-6xl space-y-6">
       {/* Back */}
       <Link to="/escrows" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-fg transition-colors">
         <ArrowLeft size={14} />

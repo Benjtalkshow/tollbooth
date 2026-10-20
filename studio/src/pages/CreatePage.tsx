@@ -215,7 +215,7 @@ export function CreatePage() {
   }
 
   return (
-    <div className="max-w-2xl space-y-6">
+    <div className="max-w-6xl space-y-6">
       <div>
         <h1 className="text-lg font-semibold text-fg tracking-tight">Create Escrow</h1>
         <p className="text-muted text-sm mt-1">Set up a new USDC escrow between parties.</p>
