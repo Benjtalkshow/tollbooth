@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { EscrowStatusPill } from '@/components/ui/Pill'
 import { useEscrow, useMilestones, useFundedTotal } from '@/hooks/useTollbooth'
@@ -22,6 +22,7 @@ function Row({ escrowId, wallet, compact }: { escrowId: bigint; wallet?: string;
   const { escrow, isLoading } = useEscrow(escrowId)
   const { milestones } = useMilestones(escrowId)
   const { fundedTotal } = useFundedTotal(escrowId)
+  const navigate = useNavigate()
   if (isLoading) {
     return (
       <tr>
@@ -35,9 +36,16 @@ function Row({ escrowId, wallet, compact }: { escrowId: bigint; wallet?: string;
   const mine = rolesFor(escrow.roles, wallet)
   const done = milestones.filter(m => m.released || m.resolved).length
   return (
-    <tr>
+    <tr
+      className="cursor-pointer"
+      role="link"
+      tabIndex={0}
+      aria-label={`Open escrow ${String(escrowId)}`}
+      onClick={() => { void navigate(`/escrows/${escrowId}`) }}
+      onKeyDown={e => { if (e.key === 'Enter') void navigate(`/escrows/${escrowId}`) }}
+    >
       <td>
-        <Link to={`/escrows/${escrowId}`} className="font-mono text-fg hover:underline underline-offset-2">#{String(escrowId)}</Link>
+        <Link to={`/escrows/${escrowId}`} className="font-mono text-info hover:underline underline-offset-2" onClick={e => e.stopPropagation()}>#{String(escrowId)}</Link>
       </td>
       <td className="text-muted">{escrow.escrowType === EscrowType.MultiRelease ? 'Multi' : 'Single'}<span className="sr-only"> {ESCROW_TYPE_LABELS[escrow.escrowType]}</span></td>
       <td>
