@@ -9,7 +9,7 @@ cd studio
 bun install            # pulls OpenZeppelin
 git clone --depth 1 https://github.com/foundry-rs/forge-std lib/forge-std   # once
 forge test -vv         # 44 tests incl. a 256-run invariant, about 15 seconds
-forge test --match-test test_VerifierCanRelease -vvvv   # trace one test
+forge test --match-test test_ResolveDispute_TwoWaySplit -vvvv   # trace one test
 ```
 
 ## 2. SDK and the three-agent demo on a local chain
@@ -70,7 +70,7 @@ To click through it as the client or worker, import a demo key into MetaMask (Ac
 | Currency symbol | USDC |
 | Explorer | https://explorer.testnet.arc.io |
 
-Create a job as the client, switch to the worker account to submit, switch back to release, then withdraw as the worker. Escrow #1 from the SDK demo is already visible under all three accounts.
+Create an escrow as the client, switch to the worker account to submit evidence, switch back to approve and release, then withdraw as the worker. To try a dispute, dispute a milestone as the client and resolve it from the resolver account. Escrow #1 from the SDK demo is already visible under all three accounts.
 
 ## 5. Same demo on Arc Testnet
 
