@@ -1,25 +1,57 @@
 {
   "name": "tollbooth-sdk",
-  "version": "0.1.0",
-  "description": "TypeScript SDK for Tollbooth — USDC escrow for software that pays software, on Arc.",
+  "version": "0.1.2",
+  "description": "TypeScript SDK for Tollbooth, a role-based USDC escrow on Arc for software that pays software. Typed client plus LLM tool definitions.",
   "license": "MIT",
+  "author": "Benjtalkshow",
+  "homepage": "https://github.com/Benjtalkshow/tollbooth-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benjtalkshow/tollbooth-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Benjtalkshow/tollbooth-sdk/issues"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },
-  "peerDependencies": { "viem": "^2.0.0" },
+  "peerDependencies": {
+    "viem": "^2.0.0"
+  },
   "devDependencies": {
     "typescript": "^5.6.0",
     "viem": "^2.21.0",
     "vitest": "^2.1.0"
   },
-  "keywords": ["arc", "usdc", "escrow", "agents", "viem", "circle"]
+  "keywords": [
+    "arc",
+    "arc-network",
+    "usdc",
+    "escrow",
+    "agents",
+    "ai-agents",
+    "viem",
+    "circle",
+    "payments",
+    "tollbooth"
+  ]
 }
