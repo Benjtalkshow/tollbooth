@@ -101,3 +101,17 @@ DEPLOYER_PRIVATE_KEY=0x... OWNER_ADDRESS=0xYourWallet FEE_BPS=50 ./scripts/deplo
 ```
 
 `OWNER_ADDRESS` becomes the contract owner and the protocol fee recipient. After deploying, put the address in `packages/sdk/src/chains.ts` and `studio/src/config.ts`.
+
+## 7. Redeploying the live dashboard
+
+The live app at https://tollbooth-zeta.vercel.app is a static Vercel deployment of `studio/dist`. To ship a dashboard change:
+
+```
+cd studio
+bun run build
+cp vercel.json dist/vercel.json
+cd dist
+npx vercel@latest deploy --prod --yes --name tollbooth --scope hudddles-projects
+```
+
+If the build dies with `The service was stopped` from esbuild, the esbuild binary was killed on launch. Reinstall it: `rm -rf node_modules/esbuild node_modules/@esbuild && bun install`.
