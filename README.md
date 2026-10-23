@@ -24,7 +24,7 @@ Built with [Arc Studio](https://studio.arc.io) for the Arc Microgrants "Built wi
 - Arc Studio project: https://studio.arc.io/app/87436b9d-4210-4afb-91ca-fe206a6008b2
 - This repo: https://github.com/Benjtalkshow/tollbooth
 - SDK repo and npm packages: https://github.com/Benjtalkshow/tollbooth-sdk · `tollbooth-sdk` · `@tollbooth-sdk/mcp`
-- Live app: https://tollbooth-zeta.vercel.app
+- Live app: https://tollbooth-arc.vercel.app
 - Arc Testnet contract (v2): https://explorer.testnet.arc.io/address/0x92e2758e11883865db2cebbfe16abf1cd5231c0d
 - Arc mainnet contract: https://explorer.arc.io/address/0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532 (deploy tx https://explorer.arc.io/tx/0x2fb7b921a8a4ee3870deb5be92c2ebb405f81b8ba91b49f1702defbee55b233e)
 

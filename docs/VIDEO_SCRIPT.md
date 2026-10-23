@@ -6,7 +6,7 @@ Target length: 4 to 5 minutes. Record each section as its own take. Speak slowly
 
 Open these tabs, in this order, so you can move left to right:
 
-1. Dashboard: https://tollbooth-zeta.vercel.app (or `http://localhost:5173` after `bun run dev` in `studio/`).
+1. Dashboard: https://tollbooth-arc.vercel.app (or `http://localhost:5173` after `bun run dev` in `studio/`).
 2. Arc Studio project: https://studio.arc.io/app/87436b9d-4210-4afb-91ca-fe206a6008b2
 3. Explorer: https://explorer.arc.io/address/0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532
 4. npm: https://www.npmjs.com/package/tollbooth-sdk
@@ -176,4 +176,4 @@ Tollbooth. Escrow for software that pays software. Built with Arc Studio, live o
 
 - Trim dead air in Section 4 but keep every transaction link visible for at least two seconds.
 - Export at 1080p. Upload unlisted to YouTube or Loom.
-- Paste the link into the DoraHacks form together with the Studio project URL, the live app URL https://tollbooth-zeta.vercel.app, the contract address `0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532`, one transaction hash from the run, and the GitHub repo.
+- Paste the link into the DoraHacks form together with the Studio project URL, the live app URL https://tollbooth-arc.vercel.app, the contract address `0xB35078B2D3570f05Fb3390D8a1f2Df1E3e787532`, one transaction hash from the run, and the GitHub repo.
