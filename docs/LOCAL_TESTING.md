@@ -104,14 +104,15 @@ DEPLOYER_PRIVATE_KEY=0x... OWNER_ADDRESS=0xYourWallet FEE_BPS=50 ./scripts/deplo
 
 ## 7. Redeploying the live dashboard
 
-The live app at https://tollbooth-zeta.vercel.app is a static Vercel deployment of `studio/dist`. To ship a dashboard change:
+The live app at https://tollbooth-arc.vercel.app is a Vercel project in the Benjtalkshow account. The Vercel CLI must be logged into that account (`npx vercel@latest whoami` should say so; if not, `npx vercel@latest logout` then `npx vercel@latest login`). To ship a dashboard change:
 
 ```
 cd studio
 bun run build
 cp vercel.json dist/vercel.json
 cd dist
-npx vercel@latest deploy --prod --yes --name tollbooth --scope hudddles-projects
+npx vercel@latest link --yes --project tollbooth-arc
+npx vercel@latest deploy --prod --yes
 ```
 
 If the build dies with `The service was stopped` from esbuild, the esbuild binary was killed on launch. Reinstall it: `rm -rf node_modules/esbuild node_modules/@esbuild && bun install`.
